@@ -52,11 +52,13 @@ def headless(argv: List[str]) -> None:
                 logging.warning(f"Invalide TCP port arg: {arg}")
                 sys.exit(1)
 
-    ServerInstance(tcp_port, udp_port)
+    server = ServerInstance(tcp_port, udp_port)
     logging.info("Running as headless server"
                  f" with port TCP:{tcp_port} UDP:{udp_port}")
 
     reactor.run()
+
+    server.close()
 
     logging.info("Exiting")
 
