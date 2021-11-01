@@ -31,7 +31,7 @@ def headless(argv: List[str]) -> None:
     for opt, arg in opts:
 
         if opt in ("-h", "--help"):
-            print(f"python {__file__} [-p <port> (default 4269)]")
+            print(f"python {__file__} [-t <TCP port>][-u <UDP port>]")
             sys.exit()
 
         elif opt in ("-u", "--udp_port"):
