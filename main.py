@@ -34,7 +34,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO,
                     datefmt="%H:%M:%S")
 
 
-_VERSION_ = "1.5.8d"
+_VERSION_ = "1.5.8c"
 
 
 class ConnectionPage(ttk.Frame):
@@ -83,24 +83,19 @@ class ConnectionPage(ttk.Frame):
             self, bd=2, relief=tkinter.RIDGE)
         self.f_connection_info.grid()
 
-        self.l_ip = tkinter.Label(self.f_connection_info, text="Address",
+        self.l_ip = tkinter.Label(self.f_connection_info, text="IP",
                                   anchor=tkinter.E, width=10)
         self.l_ip.grid(row=0, column=0, padx=5, pady=2)
-        Hovertip(self.l_ip, "Address of the server host ip or domain", 10)
 
         self.l_tcp_port = tkinter.Label(self.f_connection_info,
                                         text="TCP port", anchor=tkinter.E,
                                         width=10)
         self.l_tcp_port.grid(row=1, column=0, padx=5, pady=2)
-        Hovertip(self.l_ip, "TCP port of the host server (1024 - 10 000),"
-                            " can be the same UDP", 10)
 
         self.l_udp_port = tkinter.Label(self.f_connection_info,
                                         text="UDP port", anchor=tkinter.E,
                                         width=10)
         self.l_udp_port.grid(row=2, column=0, padx=5, pady=2)
-        Hovertip(self.l_ip, "UDP port of the host server (1024 - 10 000),"
-                            " can be the same as TCP", 10)
 
         self.l_username = tkinter.Label(self.f_connection_info,
                                         text="Username",
@@ -228,12 +223,12 @@ class ConnectionPage(ttk.Frame):
             error_message += "Invalide username\n"
 
         driverID = self.e_driverID.get()
-        if driverID != "" and driverID.isnumeric() and 0 < int(driverID) <= 5:
+        if driverID != "" and driverID.isnumeric() and 0 < int(driverID) <= 6:
             self.e_driverID.config(background="White")
 
         else:
             self.e_driverID.config(background="Red")
-            if (driverID.isnumeric() and 1 > int(driverID) > 5):
+            if (driverID.isnumeric() and 1 > int(driverID) > 6):
                 error_message += ("Are you sure you are the driver N° "
                                   f"{driverID} in your team ?")
             else:
