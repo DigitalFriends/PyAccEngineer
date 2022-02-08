@@ -7,7 +7,7 @@
 3. [Usefull info](#warnings)
 4. [Donate](#donation)
 
-![the app](https://imgur.com/a/AvGsOBg)
+![the app](https://i.imgur.com/VX4aXGm.png)
 
 For more images [here](https://imgur.com/a/ZlYYni5)
 
