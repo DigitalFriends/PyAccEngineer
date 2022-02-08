@@ -20,33 +20,39 @@ class UserUI(ttk.Frame):
         column_count += 1
 
         user1 = tkinter.StringVar()
-        l_user1 = ttk.Label(f_background, textvariable=user1, width=18,
+        l_user1 = ttk.Label(f_background, textvariable=user1, width=14,
                             anchor=tkinter.CENTER)
         l_user1.grid(row=0, column=column_count, padx=1, pady=1)
         column_count += 1
 
         user2 = tkinter.StringVar()
-        l_user2 = ttk.Label(f_background, textvariable=user2, width=18,
+        l_user2 = ttk.Label(f_background, textvariable=user2, width=14,
                             anchor=tkinter.CENTER)
         l_user2.grid(row=0, column=column_count, padx=1, pady=1)
         column_count += 1
 
         user3 = tkinter.StringVar()
-        l_user3 = ttk.Label(f_background, textvariable=user3, width=18,
+        l_user3 = ttk.Label(f_background, textvariable=user3, width=14,
                             anchor=tkinter.CENTER)
         l_user3.grid(row=0, column=column_count, padx=1, pady=1)
         column_count += 1
 
         user4 = tkinter.StringVar()
-        l_user4 = ttk.Label(f_background, textvariable=user4, width=18,
+        l_user4 = ttk.Label(f_background, textvariable=user4, width=14,
                             anchor=tkinter.CENTER)
         l_user4.grid(row=0, column=column_count, padx=1, pady=1)
         column_count += 1
 
         user5 = tkinter.StringVar()
-        l_user5 = ttk.Label(f_background, textvariable=user5, width=18,
+        l_user5 = ttk.Label(f_background, textvariable=user5, width=14,
                             anchor=tkinter.CENTER)
         l_user5.grid(row=0, column=column_count, padx=1, pady=1)
+        column_count += 1
+
+        user6 = tkinter.StringVar()
+        l_user6 = ttk.Label(f_background, textvariable=user6, width=14,
+                            anchor=tkinter.CENTER)
+        l_user6.grid(row=0, column=column_count, padx=1, pady=1)
 
         self.user_vars = {
             1: {
@@ -69,13 +75,17 @@ class UserUI(ttk.Frame):
                 "label": l_user5,
                 "var": user5
             },
+            6: {
+                "label": l_user6,
+                "var": user6
+            },
         }
 
         f_background.pack()
 
     def add_user(self, name: str, driverID: int) -> None:
 
-        if len(self.user_list) < 5 and name not in self.user_list:
+        if len(self.user_list) < 6 and name not in self.user_list:
             self.user_list.append(name)
             self.user_vars[driverID]["var"].set(f"{name} ({driverID})")
 
